@@ -7,15 +7,12 @@ using System.Threading.Tasks;
 
 namespace Turnero.BD.Data.Entidades
 {
-
-    public class Turno : EntityBase
+    public class EntityBase
     {
-
-       
-        [Required]
-        public int IdAlumno { get; set; }
-
-       
-     
+        public int Id { get; set; }
+   
+        public DateTime? FechaTurno { get; set; }
+      
+        public DateTime? FechaCreacion { get; set; }
     }
 }

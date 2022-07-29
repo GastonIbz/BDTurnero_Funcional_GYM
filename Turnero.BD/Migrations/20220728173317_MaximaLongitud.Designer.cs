@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Turnero.BD.Data;
 
@@ -11,9 +12,10 @@ using Turnero.BD.Data;
 namespace Turnero.BD.Migrations
 {
     [DbContext(typeof(BDContext))]
-    partial class BDContextModelSnapshot : ModelSnapshot
+    [Migration("20220728173317_MaximaLongitud")]
+    partial class MaximaLongitud
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,10 +37,10 @@ namespace Turnero.BD.Migrations
                         .HasMaxLength(8)
                         .HasColumnType("nvarchar(8)");
 
-                    b.Property<DateTime?>("FechaCreacion")
+                    b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("FechaTurno")
+                    b.Property<DateTime>("FechaTurno")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImagenPerfil")
@@ -55,9 +57,6 @@ namespace Turnero.BD.Migrations
                         .HasColumnType("nvarchar(12)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex(new[] { "DNI" }, "AlumnoDNI_UQ")
-                        .IsUnique();
 
                     b.ToTable("TablaAlumnos");
                 });
@@ -75,10 +74,10 @@ namespace Turnero.BD.Migrations
                         .HasMaxLength(8)
                         .HasColumnType("nvarchar(8)");
 
-                    b.Property<DateTime?>("FechaCreacion")
+                    b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("FechaTurno")
+                    b.Property<DateTime>("FechaTurno")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ImagenPerfil")
@@ -96,9 +95,6 @@ namespace Turnero.BD.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex(new[] { "DNI" }, "ProfesorDNI_UQ")
-                        .IsUnique();
-
                     b.ToTable("TablaProfesores");
                 });
 
@@ -113,10 +109,10 @@ namespace Turnero.BD.Migrations
                     b.Property<int?>("AlumnoId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("FechaCreacion")
+                    b.Property<DateTime>("FechaCreacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("FechaTurno")
+                    b.Property<DateTime>("FechaTurno")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("IdAlumno")
