@@ -17,7 +17,7 @@ namespace Turnero.BD.Data.Entidades
         [MaxLength(8, ErrorMessage = "El DNI no debe superar los {1} caracteres")]
         public string DNI { get; set; }
 
-        [Required]
+       
         [MaxLength(30, ErrorMessage = "El nombre no es valido, no debe superar los {1} caracteres")]
         public string Nombre { get; set; }
 

@@ -13,7 +13,7 @@ namespace Turnero.BD.Data.Entidades
 
     {
 
-        [Required]
+        
         [MaxLength(30, ErrorMessage = "El Nombre no debe superar los {1} caracteres")]
         public string Nombre{ get; set; }
         
